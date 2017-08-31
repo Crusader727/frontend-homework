@@ -3,17 +3,17 @@
 function set(object, field, value) {
     let arr = field.split('.');
     arr = arr.slice(1);
-    let objectCopy = object;
+    let objectPtr = object;
     let length = arr.length;
-    arr.forEach(function(item, i) {
-        if (typeof objectCopy === "object" && i < length - 1) {
-            if (typeof objectCopy[item] === "undefined") {
-                objectCopy[item] = {};
+    arr.forEach((item, i) => {
+        if (typeof objectPtr === "object" && i < length - 1) {
+            if (typeof objectPtr[item] === "undefined") {
+                objectPtr[item] = {};
             }
-            objectCopy = objectCopy[item];
+            objectPtr = objectPtr[item];
         }
-    }, this);
-    objectCopy[arr[length - 1]] = value;
+    });
+    objectPtr[arr[length - 1]] = value;
 
     return object;
 };
