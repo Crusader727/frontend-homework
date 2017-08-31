@@ -5,7 +5,7 @@ function set(object, field, value) {
     arr = arr.slice(1);
     let objectCopy = object;
     let length = arr.length;
-    arr.forEach(function(item, i, arr) {
+    arr.forEach(function(item, i) {
         if (typeof objectCopy === "object" && i < length - 1) {
             if (typeof objectCopy[item] === "undefined") {
                 objectCopy[item] = {};
