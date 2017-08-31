@@ -1,8 +1,7 @@
 'use strict'
 
 function set(object, field, value) {
-    let arr = field.split('.');
-    arr = arr.slice(1);
+    let arr = field.split('.').slice(1);
     let objectPtr = object;
     let length = arr.length;
     arr.forEach((item, i) => {
